@@ -61,7 +61,6 @@ def prime_factors(n):
 
 
 def distinct_factors(n):
-    """returns a list of all distinct factors of n"""
     factors = [1]
     for p, exp in prime_factors(n).items():
         factors += [p**i * factor for factor in factors for i in range(1, exp + 1)]
@@ -69,7 +68,6 @@ def distinct_factors(n):
 
 
 def all_factors(n):
-    """returns a sorted list of all distinct factors of n"""
     small, large = [], []
     for i in range(1, int(n**0.5) + 1, 2 if n & 1 else 1):
         if not n % i:
